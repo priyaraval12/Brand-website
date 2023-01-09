@@ -91,7 +91,7 @@ const Home = () => {
                 autoFocus
                 onClick={onButton1Click}
               >
-                <div className={styles.button3}onl>SignUp/Login</div>
+                <div className={styles.button3} >SignUp/Login</div>
               </button>
             </div>
           </div>
