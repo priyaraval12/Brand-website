@@ -105,10 +105,11 @@ const Signup = () => {
                 <div className={styles.theresNoChargeUponRegistr}>
           There's no charge upon registration
                 </div>
-                <input
+                <Input
                     className={styles.fullName}
                     type="text"
                     placeholder="Full Name"
+                        
                 />
                 <div className={styles.email}>
                     <input className={styles.bg} type="email" />
@@ -122,22 +123,23 @@ const Signup = () => {
                 </div>
                 <div className={styles.password}>
                     <input className={styles.bg} type="text" />
-                    {/* <AntInput.Password
+                    <Input.Password
                         className={styles.name}
                         size="middle"
                         placeholder="Password"
                         maxLength={12}
                         bordered={false}
-                    /> */}
+
+                    />
                 </div>
                 <div className={styles.confirmPassword}>
                     <input className={styles.bg} type="text" />
-                    {/* <AntInput.Password
+                    <Input.Password
                         className={styles.name}
                         size="middle"
                         placeholder="Confirm Password"
                         bordered={false}
-                    /> */}
+                    />
                 </div>
                 <a className={styles.login} target="_blank" href="/login">
                     <span>{'Already a member? '}</span>

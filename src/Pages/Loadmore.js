@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./Home.module.css";
-// import styles from  "./../pages/Loadmore.module.css";
+import styles from "./Loadmore.module.css";
+
 
 import { Input } from "antd";
 
 
-const Home = () => {
+const Loadmore = () => {
   return (
     <>
       <div className={styles.homee}>
@@ -551,7 +551,9 @@ const Home = () => {
                 </div>
               </div>
             </div>
-       
+            <button className={styles.button4} autoFocus>
+          <div className={styles.button3}>Load More</div>
+        </button>
 
             <div className={styles.footer}>
           <img className={styles.frameItem} alt="" src="../vector-12.svg" />
@@ -637,4 +639,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Loadmore;

@@ -3,6 +3,7 @@ import Home  from "./Pages/Home";
 import Signup  from "./Pages/Signup";
 import Login  from "./Pages/Login";
 import Loadmore  from "./Pages/Loadmore";
+// import Profile from "./Pages/Profile";
 
 import { useEffect } from "react";
 
@@ -57,6 +58,8 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/Loadmore" element={<Loadmore />} />
+      {/* <Route path="*" element={<h1>404: Not Found</h1>} /> */}
+      
     </Routes>
   );
 }

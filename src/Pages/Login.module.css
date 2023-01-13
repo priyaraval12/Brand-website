@@ -393,6 +393,7 @@
 .bg,
 .bg1,
 .name {
+  color:black;
   position: absolute;
 }
 .name {
@@ -426,13 +427,12 @@
 .forgotPassword {
   position: absolute;
   top: calc(50% - 18.5px);
-  left: 61.6%;
+  left:12rem;
   font-size: var(--paragraph-3-semibold-size);
-  line-height: 20px;
   font-family: var(--paragraph-3-semibold);
   color: var(--white1);
-  text-align: left;
-  display: inline-block;
+  text-align: right;
+
 }
 .buttonChild {
   position: absolute;

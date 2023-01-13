@@ -337,7 +337,7 @@
   font-family: var(--paragraph-3-semibold);
   font-size: var(--nft-name-size);
   background-color: var(--color-white-100);
-  height: 8.45%;
+  height: 8%;
   width: 53.88%;
   top: 24.79%;
   right: 22.98%;
@@ -372,7 +372,7 @@
 .email,
 .password {
   position: absolute;
-  height: 8.45%;
+  height: 8%;
   width: 53.88%;
   right: 23.14%;
   left: 22.98%;

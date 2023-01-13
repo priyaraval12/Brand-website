@@ -130,13 +130,14 @@ const Login = () => {
                 <div className={styles.name}>Email</div>
                 <div className={styles.bgGroup}>
                     <div className={styles.bg1} />
-                    {/* <AntInput.Password
+                    <Input.Password
                         className={styles.nameAntinputpassword}
                         size="middle"
                         placeholder="Password"
                         maxLength={10}
                         bordered={false}
-                    /> */}
+                    />
+                    
                     <div className={styles.forgotPassword}>i forgot my password?</div>
                     <button
                         className={styles.button6}
