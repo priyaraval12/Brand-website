@@ -346,7 +346,7 @@
   width: 585px;
   height: 581px;
 }
-.welcomeBack {
+.welcomeBack ::-webkit-scrollbar-thumb {
   position: absolute;
   top: 44px;
   left: 134px;

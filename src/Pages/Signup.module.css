@@ -313,7 +313,7 @@
   position: absolute;
   display: inline-block;
 }
-.signUp {
+.signUp ::-webkit-scrollbar-thumb {
   top: 36px;
   left: 256px;
   background: linear-gradient(
