@@ -114,31 +114,31 @@ const Signup = () => {
                 <div className={styles.email}>
                     <input className={styles.bg} type="email" />
                     <Input
-                        className={styles.name}
-                        type="email"
+                        className={styles.nameAntinputpassword}
                         size="middle"
                         placeholder="Email"
                         bordered={false}
+                        
                     />
                 </div>
                 <div className={styles.password}>
                     <input className={styles.bg} type="text" />
                     <Input.Password
-                        className={styles.name}
-                        size="middle"
-                        placeholder="Password"
-                        maxLength={12}
-                        bordered={false}
-
+                         className={styles.nameAntinputpassword}
+                         size="middle"
+                         placeholder="Password"
+                         maxLength={10}
+                         bordered={false}
                     />
                 </div>
                 <div className={styles.confirmPassword}>
                     <input className={styles.bg} type="text" />
                     <Input.Password
-                        className={styles.name}
-                        size="middle"
-                        placeholder="Confirm Password"
-                        bordered={false}
+                         className={styles.nameAntinputpassword}
+                         size="middle"
+                         placeholder="Password"
+                         maxLength={10}
+                         bordered={false}                       
                     />
                 </div>
                 <a className={styles.login} target="_blank" href="/login">
