@@ -42,6 +42,7 @@
   width: 627px;
   height: 40px;
   flex-shrink: 0;
+ 
   padding: var(--padding-xs) var(--padding-lg) var(--padding-xs)
     var(--padding-md);
   box-sizing: border-box;
@@ -163,6 +164,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+ 
+
   justify-content: center;
   gap: var(--gap-sm);
 }
@@ -496,11 +499,11 @@
 .bgParent {
   position: absolute;
   height: 26.59%;
+  /* background-color: red; */
   width: 24.25%;
-  top: 37.58%;
-  right: 35.09%;
-  bottom: 35.83%;
-  left: 40.65%;
+  top: 27rem;
+  right: 25rem;
+  left: 37rem;
 }
 .signUp {
   text-decoration: underline;
@@ -509,7 +512,8 @@
   text-decoration: none;
   position: absolute;
   top: calc(50% + 184.5px);
-  left: 46.21%;
+  left: 42rem;
+  /* background-color: yellow; */
   font-size: var(--paragraph-3-semibold-size);
   line-height: 20px;
   color: inherit;

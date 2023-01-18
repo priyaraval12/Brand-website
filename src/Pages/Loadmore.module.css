@@ -580,6 +580,7 @@
 }
 .maskGroupIcon {
   position: relative;
+  border-radius:5%;
   width: 210px;
   height: 230px;
   flex-shrink: 0;

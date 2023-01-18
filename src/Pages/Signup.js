@@ -1,13 +1,12 @@
-import { useCallback } from 'react';
+import { useCallback} from 'react';
 import { Input } from 'antd';
-
-
 import { useNavigate } from 'react-router-dom';
 import styles from './Signup.module.css';
 
 
 
 const Signup = () => {
+   
     const navigate = useNavigate();
 
     const onButtonClick = useCallback(() => {

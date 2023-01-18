@@ -305,7 +305,7 @@ const Loadmore = () => {
                     <img
                       className={styles.maskGroupIcon}
                       alt=""
-                      src="../mask-group@2x.png"
+                      src="../The Jouney.png"
                     />
                     <div className={styles.nftNameParent}>
                       <div className={styles.topSellers}>Let’s Celebrate!</div>

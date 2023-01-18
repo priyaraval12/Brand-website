@@ -1,14 +1,41 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
+import {getAuth , signInWithEmailAndPassword} from "firebase/auth";
+import {getDatabase ,ref,set} from "firebase/database";
+import { app } from "../firebase";
+
+
+const auth = getAuth(app);
+const db = getDatabase(app);
 
 const Login = () => {
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
     const navigate = useNavigate();
 
+    const signinUser = () => {
+        signInWithEmailAndPassword(auth, email, password)
+        .then((value) => 
+            // Signed in 
+            console.log("Signed in successfully"))
+        .catch((error) => console.log(error));
+           
+    };
+    const putData = () => {
+        set(ref(db, 'users/Brand'), {
+          id:1,
+          name: "Brand",
+          email: "brand@gmail.com"
+        });
+      };
+
     const onButton2Click = useCallback(() => {
-        navigate('/');
-    }, [navigate]);
+        // navigate('/');
+        // signinUser();
+        putData();
+    }, []);
 
     useEffect(() => {
         const scrollAnimElements = document.querySelectorAll(
@@ -136,6 +163,8 @@ const Login = () => {
                         placeholder="Password"
                         maxLength={10}
                         bordered={false}
+                        onClick={e => setPassword(e.target.value)}
+                        // value={password}
                     />
                     
                     <div className={styles.forgotPassword}>i forgot my password?</div>
@@ -154,6 +183,8 @@ const Login = () => {
                     size="middle"
                     placeholder="Email"
                     bordered={false}
+                    onClick={e => setEmail(e.target.value)}
+                    // value={email}
                 />
             </form>
             <a className={styles.signup} target="_blank" href="/signup">
