@@ -181,11 +181,11 @@
   align-items: center;
   justify-content: center;
 }
-.button2:hover,
+/* .button2:hover,
 .button:hover {
   animation: 1s ease 0s 1 normal none shadow-pop-tr;
   opacity: 1;
-}
+} */
 .button3 {
   position: relative;
   font-size: var(--nft-name-size);
@@ -201,7 +201,7 @@
   padding: var(--padding-sm) var(--padding-xl);
   background-color: transparent;
   border-radius: var(--br-sm);
-  width: 134.96px;
+  /* width: 130.96px; */
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -967,8 +967,14 @@
 .theBrandGlobalIncAllRigParent {
   gap: var(--gap-4xl);
 }
-.footer,
 .navbarParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellow; */
+}
+.footer{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -981,7 +987,7 @@
 .navbarParent {
   position: absolute;
   top: 48px;
-  left: -40px;
+  
   flex: auto;
   justify-content: center;
   align-items: center;

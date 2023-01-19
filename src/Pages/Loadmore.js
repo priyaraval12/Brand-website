@@ -1,13 +1,47 @@
 import React from "react";
 import styles from "./Loadmore.module.css";
-
-
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from '@rainbow-me/rainbowkit';
+import merge from "lodash.merge";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { configureChains, createClient, WagmiConfig } from 'wagmi';
+import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
 import { Input } from "antd";
 
 
+const { chains, provider } = configureChains(
+  [mainnet, polygon, optimism, arbitrum],
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: "My RainbowKit App",
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider,
+});
+const myTheme = merge(darkTheme(), {
+  colors: {
+    accentColor: "var(--red-violet)",
+  },
+ 
+  
+});
 const Loadmore = () => {
   return (
     <>
+      <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains} theme={myTheme}>
       <div className={styles.homee}>
         <div className={styles.navbarParent}>
           <div className={styles.navbarr}>
@@ -38,7 +72,7 @@ const Loadmore = () => {
                   autoFocus
                   // onClick={onButton1Click}
                 >
-                  <div className={styles.button3}>Connect</div>
+                  <div><ConnectButton className={styles.button3} /></div>
                 </button>
               </div>
             </div>
@@ -634,7 +668,8 @@ const Loadmore = () => {
         </div>
       </div>
           </div>
-
+          </RainbowKitProvider>
+          </WagmiConfig>
     </>
   );
 };
