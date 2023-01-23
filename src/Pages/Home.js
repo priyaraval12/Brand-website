@@ -1,11 +1,40 @@
 import { useCallback, useEffect } from "react";
 import { Input } from "antd";
 import styles from "./Home.module.css";
+import '@rainbow-me/rainbowkit/styles.css';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from '@rainbow-me/rainbowkit';
+import merge from "lodash.merge";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { configureChains, createClient, WagmiConfig } from 'wagmi';
+import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+const { chains, provider } = configureChains(
+  [mainnet, polygon, optimism, arbitrum],
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: "My RainbowKit App",
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: true,
+  connectors,
+  provider,
+});
+const myTheme = merge(darkTheme(), {
+  colors: {
+    accentColor: "var(--red-violet)",
+  },
+});
 
 const Home = () => {
-  const onButton1Click = useCallback(() => {
-    window.open("/login");
-  }, []);
 
   const onButton3Click = useCallback(() => {
     window.open("/loadmore");
@@ -42,6 +71,8 @@ const Home = () => {
   }, []);
 
   return (
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains} theme={myTheme}>
     <div className={styles.home}>
       <div className={styles.navbarParent}>
         <div className={styles.navbar}>
@@ -83,16 +114,16 @@ const Home = () => {
               />
             </button>
             <div className={styles.buttonParent}>
-              <button className={styles.button}>
+              {/* <button className={styles.button}>
                 <div className={styles.button1}>Create</div>
-              </button>
+              </button> */}
               <button
-                className={styles.button2}
-                autoFocus
-                onClick={onButton1Click}
-              >
-                <div className={styles.button3} >SignUp/Login</div>
-              </button>
+                  className={styles.button2}
+                  autoFocus
+                  // onClick={onButton1Click}
+                >
+                  <div><ConnectButton className={styles.button1} /></div>
+                </button>
             </div>
           </div>
         </div>
@@ -622,6 +653,8 @@ const Home = () => {
       </div>
       <div className={styles.gotGiftCarsForSale}>Got Gift Cars for sale ?</div>
     </div>
+    </RainbowKitProvider>
+    </WagmiConfig>
   );
 };
 

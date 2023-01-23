@@ -36,6 +36,7 @@ const Login = () => {
         // signinUser();
         putData();
     }, []);
+    
 
     useEffect(() => {
         const scrollAnimElements = document.querySelectorAll(

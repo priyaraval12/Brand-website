@@ -181,11 +181,16 @@
   align-items: center;
   justify-content: center;
 }
-.button2:hover,
+/* .button2:hover,
 .button:hover {
   animation: 1s ease 0s 1 normal none shadow-pop-tr;
   opacity: 1;
-}
+} */
+/* .button2:hover,
+.button:hover {
+  animation: 1s ease 0s 1 normal none shadow-pop-tr;
+  opacity: 1;
+} */
 .button3 {
   position: relative;
   font-size: var(--nft-name-size);
@@ -201,7 +206,7 @@
   padding: var(--padding-sm) var(--padding-xl);
   background-color: transparent;
   border-radius: var(--br-sm);
-  width: 134.96px;
+  /* width: 130.96px; */
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -212,9 +217,11 @@
 }
 .buttonParent {
   justify-content: flex-end;
-  gap: 29px;
+  margin-right: 150px;
+  /* background-color: red; */
+
 }
-.buttonParent,
+/* .buttonParent, */
 .frameParent,
 .navbar {
   display: flex;
@@ -229,7 +236,7 @@
   gap: var(--gap-xs);
 }
 .navbar {
-  width: 1345px;
+  width: 1200px;
   justify-content: space-between;
   /* background-color: blue; */
  

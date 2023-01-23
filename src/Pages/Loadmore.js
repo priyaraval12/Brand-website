@@ -667,9 +667,9 @@ const Loadmore = () => {
           </div>
         </div>
       </div>
-          </div>
-          </RainbowKitProvider>
-          </WagmiConfig>
+      </div>
+      </RainbowKitProvider>
+      </WagmiConfig>
     </>
   );
 };

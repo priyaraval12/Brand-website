@@ -212,7 +212,9 @@
 }
 .buttonParent {
   justify-content: flex-end;
-  gap: 29px;
+  margin-right: 70px;
+  /* background-color: red; */
+
 }
 .buttonParent,
 .frameParent,
@@ -223,8 +225,9 @@
   justify-content: center;
 }
 .frameParent {
-  width: 1237.96px;
+  width: 1399.96px;
   flex-shrink: 0;
+  margin-left: -96px;
   justify-content: flex-start;
   gap: var(--gap-xs);
 }
