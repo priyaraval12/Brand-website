@@ -8,6 +8,7 @@ import {
   darkTheme,
 } from '@rainbow-me/rainbowkit';
 import merge from "lodash.merge";
+import { Router } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
@@ -37,7 +38,7 @@ const myTheme = merge(darkTheme(), {
 const Home = () => {
 
   const onButton3Click = useCallback(() => {
-    window.open("/loadmore");
+    window.open("/loadmore","_self");
   }, []);
 
   useEffect(() => {
@@ -546,7 +547,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <button className={styles.button4} autoFocus onClick={onButton3Click}>
+        <button className={styles.button4} onClick={onButton3Click}>
           <div className={styles.button3}>Load More</div>
         </button>
         <div className={styles.frameChild4} />
