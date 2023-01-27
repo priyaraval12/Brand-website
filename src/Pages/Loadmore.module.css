@@ -47,7 +47,8 @@
 .frameWrapper {
   border-radius: var(--br-sm);
   background-color: var(--black-2);
-  width: 419px;
+  width: 299px;
+  margin-left:50px;
   height: 40px;
   flex-shrink: 0;
   padding: var(--padding-xs) var(--padding-lg) var(--padding-xs)
@@ -172,7 +173,7 @@
     #c81cc5,
     #c81cc5
   );
-  width: 107px;
+  width: 89px;
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -225,7 +226,7 @@
   justify-content: center;
 }
 .frameParent {
-  width: 1399.96px;
+  width: 1453.96px;
   flex-shrink: 0;
   margin-left: -96px;
   justify-content: flex-start;
