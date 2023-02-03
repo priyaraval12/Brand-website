@@ -3,8 +3,10 @@ import Home  from "./Pages/Home";
 import Signup  from "./Pages/Signup";
 import Login  from "./Pages/Login";
 import Loadmore  from "./Pages/Loadmore";
+import CreateNFT  from "../src/Components/CreateNFT";
 // import Profile from "./Pages/Profile";
 import { useEffect } from "react";
+import Item from "./Components/Item";
 
 
 
@@ -56,12 +58,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Item/>} />
+      {/* <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/Loadmore" element={<Loadmore />} />
-      
-      
+      <Route path="/CreateNFT" element={<CreateNFT />} /> */}
     </Routes>
   );
 }

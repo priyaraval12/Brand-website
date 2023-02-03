@@ -1,4 +1,4 @@
-import React from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./Loadmore.module.css";
 import '@rainbow-me/rainbowkit/styles.css';
 import {
@@ -6,6 +6,7 @@ import {
   RainbowKitProvider,
   darkTheme,
 } from '@rainbow-me/rainbowkit';
+import { useNavigate } from 'react-router-dom';
 import merge from "lodash.merge";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
@@ -13,6 +14,7 @@ import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { Input } from "antd";
+import { Navigate, Router } from "react-router-dom";
 
 
 const { chains, provider } = configureChains(
@@ -34,10 +36,14 @@ const myTheme = merge(darkTheme(), {
   colors: {
     accentColor: "var(--red-violet)",
   },
- 
-  
 });
 const Loadmore = () => {
+  const Navigate = useNavigate();
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    Navigate('/CreateNFT');
+  }
   return (
     <>
       <WagmiConfig client={wagmiClient}>
@@ -55,7 +61,7 @@ const Loadmore = () => {
                 </a>
                 <div className={styles.menu2}>
                   <a className={styles.menu3}>My Items</a>
-                </div>
+                </div> 
                 <div className={styles.menu4}>
                   <a className={styles.menu3}>Following</a>
                 </div>
@@ -65,7 +71,7 @@ const Loadmore = () => {
               </div>
               <div className={styles.buttonParent}>
                 <button className={styles.button}>
-                  <div className={styles.button1}>Create</div>
+                  <div className={styles.button1} onClick={handleSubmit}>Create</div>
                 </button>
                 <button
                   className={styles.button2}
@@ -589,83 +595,85 @@ const Loadmore = () => {
           <div className={styles.button3}>Load More</div>
         </button>
 
-            <div className={styles.footer}>
-          <img className={styles.frameItem} alt="" src="../vector-12.svg" />
-          <div className={styles.col1Parent}>
-            <div className={styles.col1}>
-              <div className={styles.topSellers}>Get the lastes Updates</div>
-              <div className={styles.vectorParent}>
-                <img
-                  className={styles.rectangleIcon}
-                  alt=""
-                  src="../rectangle-13.svg"
-                />
-                <Input
-                  className={styles.yourEmail}
-                  type="email"
-                  size="middle"
-                  placeholder="Your Email"
-                  bordered={false}
-                />
-                <button className={styles.button8} autoFocus>
-                  <div className={styles.button1}>Email Me!</div>
+        <div className={styles.footer}>
+              <img className={styles.frameItem} alt="" src="../vector-12.svg" />
+              <div className={styles.col1Parent}>
+                <div className={styles.col1}>
+                  <div className={styles.topSellers}>
+                    Get the lastes Updates
+                  </div>
+                  <div className={styles.vectorParent}>
+                    <img
+                      className={styles.rectangleIcon}
+                      alt=""
+                      src="../rectangle-13.svg"
+                    />
+                    <Input
+                      className={styles.yourEmail}
+                      type="email"
+                      size="middle"
+                      placeholder="Your Email"
+                      bordered={false}
+                    />
+                    <button className={styles.button8} autoFocus>
+                      <div className={styles.button1}>Email Me!</div>
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.col2}>
+                  <div className={styles.brandGlobal}>Brand Global</div>
+                  <div className={styles.listItems}>
+                    <div className={styles.vision}>Vision</div>
+                    <div className={styles.vision}>{"Mission "}</div>
+                    <div className={styles.vision}>Value Proposition</div>
+                    <div className={styles.vision}>Team</div>
+                  </div>
+                </div>
+                <div className={styles.listItems1}>
+                  <div className={styles.vision}>Investors</div>
+                  <div className={styles.vision}>Careers</div>
+                  <div className={styles.vision}>Media</div>
+                  <div className={styles.vision}>Contact Us</div>
+                </div>
+                <div className={styles.col3}>
+                  <div className={styles.support}>Support</div>
+                  <div className={styles.listItems}>
+                    <div className={styles.vision}>Help center</div>
+                    <div className={styles.vision}>Terms of service</div>
+                    <div className={styles.vision}>Legal</div>
+                    <div className={styles.vision}>Privacy policy</div>
+                  </div>
+                </div>
+              </div>
+              <img className={styles.frameItem} alt="" src="../vector-12.svg" />
+              <div className={styles.theBrandGlobalIncAllRigParent}>
+                <div className={styles.topSellers}>
+                  The Brand Global, Inc. All Rights Reserved
+                </div>
+                <button className={styles.frameButton} data-animate-on-scroll>
+                  <img
+                    className={styles.frameChild5}
+                    alt=""
+                    src="../group-142.svg"
+                  />
+                  <img
+                    className={styles.frameChild5}
+                    alt=""
+                    src="../group-152.svg"
+                  />
+                  <img
+                    className={styles.frameChild5}
+                    alt=""
+                    src="../group-162.svg"
+                  />
+                  <img
+                    className={styles.frameChild5}
+                    alt=""
+                    src="../group-132.svg"
+                  />
                 </button>
               </div>
             </div>
-            <div className={styles.col2}>
-              <div className={styles.brandGlobal}>Brand Global</div>
-              <div className={styles.listItems}>
-                <div className={styles.vision}>Vision</div>
-                <div className={styles.vision}>{"Mission "}</div>
-                <div className={styles.vision}>Value Proposition</div>
-                <div className={styles.vision}>Team</div>
-              </div>
-            </div>
-            <div className={styles.listItems1}>
-              <div className={styles.vision}>Investors</div>
-              <div className={styles.vision}>Careers</div>
-              <div className={styles.vision}>Media</div>
-              <div className={styles.vision}>Contact Us</div>
-            </div>
-            <div className={styles.col3}>
-              <div className={styles.support}>Support</div>
-              <div className={styles.listItems}>
-                <div className={styles.vision}>Help center</div>
-                <div className={styles.vision}>Terms of service</div>
-                <div className={styles.vision}>Legal</div>
-                <div className={styles.vision}>Privacy policy</div>
-              </div>
-            </div>
-          </div>
-          <img className={styles.frameItem} alt="" src="../vector-12.svg" />
-          <div className={styles.theBrandGlobalIncAllRigParent}>
-            <div className={styles.topSellers}>
-              The Brand Global, Inc. All Rights Reserved
-            </div>
-            <button className={styles.frameButton} data-animate-on-scroll>
-              <img
-                className={styles.frameChild5}
-                alt=""
-                src="../group-142.svg"
-              />
-              <img
-                className={styles.frameChild5}
-                alt=""
-                src="../group-152.svg"
-              />
-              <img
-                className={styles.frameChild5}
-                alt=""
-                src="../group-162.svg"
-              />
-              <img
-                className={styles.frameChild5}
-                alt=""
-                src="../group-132.svg"
-              />
-            </button>
-          </div>
-        </div>
       </div>
       </div>
       </RainbowKitProvider>

@@ -226,9 +226,9 @@
   justify-content: center;
 }
 .frameParent {
-  width: 1453.96px;
+  width: 1353.96px;
   flex-shrink: 0;
-  margin-left: -96px;
+  margin-left: -86px;
   justify-content: flex-start;
   gap: var(--gap-xs);
 }
