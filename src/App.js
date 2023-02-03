@@ -58,11 +58,12 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Item/>} />
-      {/* <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Home/>} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/Loadmore" element={<Loadmore />} />
-      <Route path="/CreateNFT" element={<CreateNFT />} /> */}
+      <Route path="/CreateNFT" element={<CreateNFT />} />
+      <Route path="/Item" element={<Item />} />
     </Routes>
   );
 }
