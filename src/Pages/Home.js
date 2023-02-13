@@ -2,40 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 import { Input } from "antd";
 import styles from "./Home.module.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import {
-  getDefaultWallets,
-  RainbowKitProvider,
-  darkTheme,
-} from "@rainbow-me/rainbowkit";
-import merge from "lodash.merge";
 import Item from "../Components/Item";
-import { Router } from "react-router-dom";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+import { useNavigate } from "react-router-dom";
 import Item2 from "../Components/Item2";
-const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum],
-  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
-);
+import WalletButton from "../Components/WalletButton";
 
-const { connectors } = getDefaultWallets({
-  appName: "My RainbowKit App",
-  chains,
-});
-
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
-const myTheme = merge(darkTheme(), {
-  colors: {
-    accentColor: "var(--red-violet)",
-  },
-});
 
 const Home = () => {
   const [form, setForm] = useState(false);
@@ -72,10 +43,15 @@ const Home = () => {
       }
     };
   }, []);
+  const Navigate = useNavigate();
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    Navigate("/Item2");
+  }
 
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={myTheme}>
+    <>
         <div className={styles.home}>
           <div className={styles.navbarParent}>
             <div className={styles.navbar}>
@@ -134,7 +110,7 @@ const Home = () => {
                     // onClick={onButton1Click}
                   >
                     <div>
-                      <ConnectButton className={styles.button1} />
+                      <WalletButton className={styles.button1} />
                     </div>
                   </button>
                 </div>
@@ -308,7 +284,10 @@ const Home = () => {
                 <div className={styles.cardnftCardlargedarkParent}>
                   <div className={styles.cardnftCardlargedark}>
                     <div className={styles.cardsellerslargedarkChild} />
-                    <div className={styles.maskGroupParent}>
+                    <div
+                      className={styles.maskGroupParent}
+                      onClick={handleSubmit}
+                    >
                       <img
                         className={styles.maskGroupIcon}
                         alt=""
@@ -691,11 +670,10 @@ const Home = () => {
         </div>
         {form && (
           <>
-            <Item/>
+            <Item />
           </>
         )}
-      </RainbowKitProvider>
-    </WagmiConfig>
+        </>
   );
 };
 

@@ -1,0 +1,10 @@
+
+  .button3 {
+    position: relative;
+    font-size: var(--nft-name-size);
+    font-weight: 600;
+    font-family: var(--paragraph-3-semibold);
+    color: var(--red-violet);
+    text-align: left;
+    display: inline-block;
+  }

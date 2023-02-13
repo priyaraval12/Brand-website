@@ -12,7 +12,7 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import styles from "./WalletButton.module.css";
-
+import { Button } from "antd";
 
 const { chains, provider } = configureChains(
   [mainnet, polygon, optimism, arbitrum],
@@ -39,11 +39,9 @@ const WalletButton = () => {
     <div>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains} theme={myTheme}>
-          <button className={styles.button2} autoFocus>
-            <div>
-              <ConnectButton className={styles.button3} />
-            </div>
-          </button>
+          <div>
+            <ConnectButton className={styles.button3} />
+          </div>
         </RainbowKitProvider>
       </WagmiConfig>
     </div>
