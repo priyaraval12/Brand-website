@@ -1,5 +1,6 @@
 import styles from "./CreateNFT.module.css";
 
+
 const CreateNFT = () => {
   return (
     <div className={styles.createItem}>
